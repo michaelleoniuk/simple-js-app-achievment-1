@@ -17,5 +17,5 @@ let pokemonList = [
   }];    
 
 pokemonList.forEach(function(pokemon) {
-  document.write(pokemon.name + ' has ' + pokemon.height + ' inches and is described by ' + pokemon.type);
+  document.write('<p>' + pokemon.name + ' has ' + pokemon.height + ' inches and is described by ' + pokemon.type + '</p>');
 });
