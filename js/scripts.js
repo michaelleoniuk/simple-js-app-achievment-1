@@ -32,11 +32,11 @@ let pokemonRepository = (function () {
     add: add
     
   }
-
-  let unorderedList = document.querySelector('ul');
-
+  
 })()
 
 pokemonRepository.getAll().forEach(function(pokemon) {
+
+  let unorderedList = document.querySelector('ul');
 
 })
