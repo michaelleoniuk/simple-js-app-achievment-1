@@ -38,5 +38,5 @@ let pokemonRepository = (function () {
 })()
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-document.write('<p>' + pokemon.name + ' has ' + pokemon.height + ' inches and is described by ' + pokemon.type + '</p>');
+
 })
