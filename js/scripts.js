@@ -32,6 +32,9 @@ let pokemonRepository = (function () {
     add: add
     
   }
+
+  let unorderedList = document.querySelector('ul');
+
 })()
 
 pokemonRepository.getAll().forEach(function(pokemon) {
