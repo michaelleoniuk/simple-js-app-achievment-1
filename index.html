@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple JS App</title>
-    <link rel="stylesheet" type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-   <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+    <title>Pokedex</title>
   </head>
   <body>
-    <h1>Pokedex</h1>
-    <ul class='pokemon-list'></ul>
-    <script src="js/promise-polifill.js"></script>
+    <h1 class="pokedex-title">Pokedex</h1>
+    <ul class ="pokemon-list"></ul>
+    <div class="modal-container"></div>
+    <div id="image-container"></div>
+    <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polifill.js"></script>
     <script src="js/scripts.js"></script>
   </body>
