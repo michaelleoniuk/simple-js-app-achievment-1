@@ -6,6 +6,11 @@ let pokemonRepository = (function () {
 
   let modalContainer = document.querySelector(".modal-container");
 
+  function hideModal() {
+    let modal = document.querySelector(".modal");
+    modal.remove();
+  }
+
   function showModal(pokemon) {
     let modal = document.createElement("div");
     modal.classList.add("modal");
@@ -14,7 +19,7 @@ let pokemonRepository = (function () {
     let closeButtonElement = document.createElement("button");
     closeButtonElement.classList.add("modal-close");
     closeButtonElement.innerText = "Close";
-    closeButtonElement.addEventListener("click", hideModal);
+    closeButtonElement.addEventListener("click", () => {hideModal()});
 
     let titleElement = document.createElement("h1");
     titleElement.innerText = 'Pokemon name' +': '+ pokemon.name;
@@ -33,18 +38,6 @@ let pokemonRepository = (function () {
     modalContainer.appendChild(modal);
     modalContainer.classList.add("is-visible");
   }
-
-  let dialogPromiseReject;
-
-  function hideModal() {
-    let modal = document.querySelector(".modal");
-    modal.remove();
-
-    if (dialogPromiseReject) {
-        dialogPromiseReject();
-        dialogPromiseReject = null;
-    }
-}
 
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
