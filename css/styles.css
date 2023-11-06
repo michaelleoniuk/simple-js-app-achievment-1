@@ -18,6 +18,10 @@ button {
   text-align: center;
 }
 
+.page-container {
+  margin-top: 60px;
+}
+
 ul {
   list-style-type: none;
   text-align: center;
