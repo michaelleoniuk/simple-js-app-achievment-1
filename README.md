@@ -2,7 +2,7 @@ Pokedex
 
 #Project description
 
-This App allows users to search for a Pokemon. Once founded users can learn more about choces Pokemon.
+This App allows users to search for a Pokemon. Once founded users can learn more about chocen Pokemon.
 I have created this App using HTML, CSS, JS and API
 
 #How the App was created
