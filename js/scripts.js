@@ -1,7 +1,7 @@
 
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=15';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?offset=15&limit=15';
 
 
   function getAll() {
@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
       let listpokemon = document.createElement('li');
       listpokemon.classList.add('list-group-item');
       listpokemon.classList.add('col-12'); 
-      listpokemon.classList.add('col-md-4'); 
+      listpokemon.classList.add('col-md-12'); 
 
       let button = document.createElement('button');
       button.classList.add('btn'); 
@@ -61,7 +61,7 @@ let pokemonRepository = (function () {
           return response.json();
       }).then(function (details) {
           
-          item.imageUrl = details.sprites.front_default;
+          item.imageUrl = details.sprites.front_default.replace("https://raw.githubusercontent.com/PokeAPI/sprites/master/", "");
           item.height = details.height;
           item.types = details.types;
       }).catch(function (e) {
@@ -130,35 +130,3 @@ pokemonRepository.loadList().then(function() {
       pokemonRepository.addListItem(pokemon);
   }); 
 })
-
-
-let form = document.querySelector('.form-inline');
-let input = document.createElement('input');
-input.classList.add('form-control');
-input.classList.add('mr-2');
-input.classList.add('my-1');
-input.setAttribute('type', 'text');
-input.setAttribute('placeholder', 'Search');
-input.setAttribute('aria-label', 'Search');
-form.appendChild(input);
-
-
-function searchFunction() {
-  
-  var filter, li, i, txtValue, buttonPokemon;
-  filter = input.value.toUpperCase();
-  li = document.getElementsByClassName('list-group-item');
-
-  
-  for (i = 0; i < li.length; i++) {
-    buttonPokemon = li[i].getElementsByClassName('button-class')[0];
-    txtValue = buttonPokemon.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = '';
-    } else {
-      li[i].style.display = 'none';
-    }
-  }
-}
-
-input.addEventListener('keyup', searchFunction);
