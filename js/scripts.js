@@ -55,7 +55,7 @@ let pokemonRepository = ( () => {
   
     function loadDetails(item) {
         let url = item.detailsUrl;
-        return fetch(url).then( (response) => response.json();
+        return fetch(url).then( (response) => response.json()
         ).then(function (details) {
             
             item.imageUrl = details.sprites.front_default;
